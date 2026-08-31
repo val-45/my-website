@@ -1,4 +1,4 @@
- .homepage {
+ :root {
     background-color: #fff0f4;
 }
 
@@ -20,6 +20,31 @@ title {
 }
 
 .bookimage img {
-    max-width: 100%;
+    display:flex; 
     margin-right`: 20px; 
 }
+
+.shop{
+    display: flex;
+    align -items: flex-start;
+    gap: 40px;
+    justify-content: center;
+}
+
+
+.section3, .section4 {
+    text-align: center;
+}
+
+.benefits {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+}
+
+.section5, .section6, .section7 {
+    text-align: center;
+}
+
+
