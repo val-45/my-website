@@ -47,4 +47,39 @@ title {
     text-align: center;
 }
 
+/* New styles for the shop page layout */
+.top_sellers {
+  display: flex;
+  gap: 30px; 
+  font-family: sans-serif;
+  align-items: flex-start; /* makes the top of the columns align */
+}
+
+
+.item1 {
+  flex: 1.2;
+}
+
+.item1 img {
+  max-width: 100%; /* Ensure image doesn't exceed column width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Stack the two items */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; 
+
+/* Put the small image and text side-by-side inside the item */
+.item3 {
+  display: flex;
+  gap: 15px; /* Space between small image and its text */
+}
+
+.item3 img {
+  width: 150px; /* Fixed width for the small images */
+}
 
