@@ -48,6 +48,24 @@ title {
 }
 
 /* New styles for the shop page layout */
+
+.banner {
+  /* Step 1: Link your background image file or URL */
+  background-image: url('/Users/daughter/Desktop/mywebsite/images/background.jpg');
+
+  /* Step 2: Crop and center the image perfectly without stretching */
+  background-size: cover;
+  background-position: center;
+
+  /* Step 3: Prevent the image from repeating like tiles */
+  background-repeat: no-repeat;
+
+  /* Step 4: Define the height of your container */
+  min-height: 500px; 
+  width: 100%;
+}
+
+
 .top_sellers {
   display: flex;
   gap: 30px; 
