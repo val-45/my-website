@@ -50,20 +50,28 @@ title {
 /* New styles for the shop page layout */
 
 .banner {
-  /* Step 1: Link your background image file or URL */
+  /* 1. Add and position the background image */
   background-image: url('/Users/daughter/Desktop/mywebsite/images/background.jpg');
-
-  /* Step 2: Crop and center the image perfectly without stretching */
   background-size: cover;
   background-position: center;
-
-  /* Step 3: Prevent the image from repeating like tiles */
   background-repeat: no-repeat;
+  
+  /* 2. Center all text inside perfectly (Flexbox) */
+  display: flex;
+  flex-direction: column;    /* Stacks elements vertically */
+  justify-content: center;   /* Centers text vertically (top-to-bottom) */
+  align-items: center;       /* Centers text horizontally (left-to-right) */
+  text-align: center;        /* Centers lines of text individually */
 
-  /* Step 4: Define the height of your container */
-  min-height: 500px; 
+  /* 3. Give the banner some height so centering is visible */
+  min-height: 500px;
   width: 100%;
+  
+  /* 4. Style the text color so it stands out against the image */
+  color: #ffffff; 
+  font-family: 'Quicksand', sans-serif;
 }
+
 
 
 .top_sellers {
