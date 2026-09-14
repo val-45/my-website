@@ -1,53 +1,15 @@
+/* New styles for the shop page layout */
  :root {
-    background-color: #fff0f4;
-}
-
-:root {
+    background-color: #f2004d;
     color: #000000;
     font-family: 'Quicksand', sans-serif;
 }
+
 
 title {
     color: #000000;
     font-family: 'Quicksand', sans-serif;
 }
-
-.shopbutton {
-    background-color: #ffb6c1;
-    color: #000000;
-    padding: 10px 20px;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.bookimage img {
-    display:flex; 
-    margin-right`: 20px; 
-}
-
-.shop{
-    display: flex;
-    align -items: flex-start;
-    gap: 40px;
-    justify-content: center;
-}
-
-
-.section3, .section4 {
-    text-align: center;
-}
-
-.benefits {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    justify-content: center;
-}
-
-.section5, .section6, .section7 {
-    text-align: center;
-}
-
-/* New styles for the shop page layout */
 
 .banner {
   /* 1. Add and position the background image */
@@ -98,6 +60,7 @@ title {
   display: flex;
   flex-direction: column;
   gap: 40px; 
+}
 
 /* Put the small image and text side-by-side inside the item */
 .item3 {
@@ -108,4 +71,3 @@ title {
 .item3 img {
   width: 150px; /* Fixed width for the small images */
 }
-

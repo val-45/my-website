@@ -1,0 +1,48 @@
+ :root {
+    background-color: #ff87a7;
+    color: #000000;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+title {
+    color: #000000;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.shopbutton {
+    background-color: #ffb6c1;
+    color: #000000;
+    padding: 10px 20px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.bookimage img {
+    display:flex; 
+    margin-right: 20px; 
+}
+
+.shop{
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+}
+
+
+.section3, .section4 {
+    text-align: center;
+}
+
+.benefits {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+}
+
+.section5, .section6, .section7 {
+    text-align: center;
+}
+
+
