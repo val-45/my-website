@@ -10,9 +10,9 @@
   /* 2. Center all text inside perfectly (Flexbox) */
   display: flex;
   flex-direction: column;    /* Stacks elements vertically */
-  justify-content: center;   /* Centers text vertically (top-to-bottom) */
-  align-items: center;       /* Centers text horizontally (left-to-right) */
-  text-align: center;        /* Centers lines of text individually */
+  justify-content: center;   /*  text  (top-to-bottom) */
+  align-items: center;       /*  text horizontally (left-to-right) */
+  text-align: center;        /*  lines of text individually */
 
   /* 3. Give the banner some height so centering is visible */
   min-height: 500px;

@@ -46,3 +46,58 @@ title {
 }
 
 
+/* Layout wrapper to split text and image into two side-by-side columns */
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 40px;                      /* Creates space between text and image */
+  align-items: center;            
+  padding: 40px;                  /* Outer spacing around the section */
+  max-width: 1200px;
+  margin: 0 auto;                 /* Centers the entire container on wide screens */
+}
+
+/* Make sure the image behaves and fills its container nicely */
+.benefits-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;             /* Optional: slightly rounds the image corners  */
+  object-fit: cover;
+}
+
+/* Individual feature styling */
+.benefit_items {
+  margin-bottom: 20px;            /* Adds  room under each text block */
+}
+
+.benefit_items h3 {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.benefit_items p {
+  color: #555;                    /* Softens body text color to match the design */
+}
+
+/* Button grouping  */
+.benefit_buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;                      /* Puts space between the two buttons */
+  font-family: 'Quicksand', sans-serif;
+}
+
+.button-one{
+  background-color: #ffb6c1;
+  color: #000000;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+.button-second{
+  background-color: #ffb6c1;
+  color: #000000;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
