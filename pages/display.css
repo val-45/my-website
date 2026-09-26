@@ -1,0 +1,117 @@
+@import url("../homepage.css");
+
+
+/* 1. Main Product Section Layout (Flexbox) */
+.product-display {
+  display: flex;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  align-items: center;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.site-name {
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.product-title {
+  font-size: 32px;
+  margin: 10px 0 5px 0;
+}
+
+.product-subheading {
+  font-size: 18px;
+  color: #666;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.btn-primary {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+/* 2. Related Products Layout (CSS Grid) */
+.related-products {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.related-products h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Individual Product Cards */
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin: 12px 0 4px 0;
+}
+
+.product-card .desc {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.product-card .price {
+  font-weight: bold;
+  margin: 0;
+}
+
