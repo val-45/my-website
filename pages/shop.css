@@ -57,8 +57,11 @@
   gap: 15px; /* Space between small image and its text */
 }
 
+
 .item3 img {
-  width: 150px; /* Fixed width for the small images */
+  width: 180px; /* Fixed width for the small images */
+  height: 240px; /* Maintain aspect ratio */
+  object-fit: cover;
 }
 
 /* the two textbooks reverse layout */
@@ -71,7 +74,7 @@
 }
 
 /*  Grid layout  */
-.s1 {
+.s1, .s2 {
     display: grid;
     grid-template-columns: 1.5fr 1fr; /* Split page exactly in half */
     gap: 60px;
