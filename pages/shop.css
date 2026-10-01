@@ -2,7 +2,7 @@
 
 .banner {
   /* 1. Add and position the background image */
-  background-image: url('/Users/daughter/Desktop/mywebsite/images/background.jpg');
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
