@@ -23,6 +23,12 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+.display {
+    background-color: #ffb6c1;
+    color: #000000;
+    padding: 10px 20px;
+    font-family: 'Quicksand', sans-serif;
+}
 
 
 .top_sellers {
