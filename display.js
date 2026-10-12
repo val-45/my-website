@@ -1,109 +1,63 @@
-
-// Wait for the DOM window to fully load
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("Products script loaded successfully!");
 
-  // Select elements from the DOM
-  const addToCartBtn = document.getElementById('add_to_cart_btn');
-  const cartContainer = document.getElementById('cart_items_container');
-  const cartTotalPrice = document.getElementById('cart_total_price');
+  // Select all add-to-cart buttons using their class name
+  const addToCartButtons = document.querySelectorAll('.add-cart-btn');
+  const cartBadge = document.querySelector('.cart-btn span');
 
-  // Load existing cart array from localStorage (or start with an empty list)
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  updateCartBadge();
 
-  // Function to display/render cart items on the page
-  function renderCart() {
-    if (!cartContainer) return;
+  addToCartButtons.forEach((button, index) => {
+    button.addEventListener('click', (e) => {
+      // Find the parent product card
+      const productCard = e.target.closest('.product-card');
+      if (!productCard) return;
 
-    // Clear previous elements
-    cartContainer.innerHTML = '';
+      // Grab the unique ID from the card, or fallback to an index-based ID
+      const productId = productCard.id || `product-${index}`;
+      
+      const titleEl = productCard.querySelector('h3');
+      const title = titleEl ? titleEl.textContent.trim() : 'Product';
 
-    if (cart.length === 0) {
-      cartContainer.innerHTML = '<p class="empty-msg">Your cart is empty.</p>';
-      if (cartTotalPrice) cartTotalPrice.textContent = '$0.00';
-      return;
-    }
+      const priceEl = productCard.querySelector('.price .current') || productCard.querySelector('.price');
+      const price = priceEl ? priceEl.textContent.trim() : '$0.00';
 
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      const itemTotal = item.price * item.quantity;
-      total += itemTotal;
-
-      const itemRow = document.createElement('div');
-      itemRow.classList.add('cart-item-row');
-      itemRow.innerHTML = `
-        <div class="cart-item-info">
-          <span class="cart-item-title">${item.name}</span>
-          <span class="cart-item-price">$${item.price.toFixed(2)} x ${item.quantity}</span>
-        </div>
-        <button class="remove-btn" data-index="${index}">&times;</button>
-      `;
-
-      cartContainer.appendChild(itemRow);
-    });
-
-    if (cartTotalPrice) {
-      cartTotalPrice.textContent = `$${total.toFixed(2)}`;
-    }
-
-    // Attach remove handlers
-    const removeButtons = cartContainer.querySelectorAll('.remove-btn');
-    removeButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const itemIndex = e.target.getAttribute('data-index');
-        removeFromCart(itemIndex);
-      });
-    });
-  }
-
-  // Add item to cart
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener('click', () => {
-      // Product details (Matches your Figma UI)
       const product = {
-        id: 'product-1',
-        name: 'Product name',
-        price: 10.99,
+        id: productId,
+        name: title,
+        price: price,
         quantity: 1
       };
 
-      // Check if product is already in cart
-      const existingIndex = cart.findIndex(item => item.id === product.id);
-
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += 1;
+      // Check if product already exists in cart
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
       } else {
         cart.push(product);
       }
 
       // Save to localStorage
       localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartBadge();
 
-      // Update button visual state
-      addToCartBtn.textContent = 'Added ✓';
-      addToCartBtn.style.backgroundColor = '#28a745';
-      addToCartBtn.disabled = true;
+      // Visual feedback on the button
+      const originalText = button.textContent;
+      button.textContent = 'Added ✓';
+      button.style.backgroundColor = '#16a34a';
 
-      // Update the display list immediately
-      renderCart();
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = '#111';
+      }, 1500);
     });
-  }
+  });
 
-  // Remove item from cart
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    // Reset "Add to Cart" button if product removed
-    if (addToCartBtn) {
-      addToCartBtn.textContent = 'Add to cart';
-      addToCartBtn.style.backgroundColor = '#000000';
-      addToCartBtn.disabled = false;
+  function updateCartBadge() {
+    if (cartBadge) {
+      const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartBadge.textContent = totalCount;
     }
-
-    renderCart();
   }
-
-  // Initial render when page loads
-  renderCart();
 });
