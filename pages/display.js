@@ -60,4 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
       cartBadge.textContent = totalCount;
     }
   }
+
+  const navCartBtn = document.getElementById('nav_cart_btn');
+  if (navCartBtn) {
+    navCartBtn.addEventListener('click', () => {
+    window.location.href = 'checkout.html'; // Change to your destination page filename
+  });
+  }
+
 });

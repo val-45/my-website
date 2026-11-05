@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation - Bookify</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="confirm-header">
+    <div class="logo">bookify</div>
+    <div class="header-links">
+      <a href="#">Support</a>
+      <a href="#">My Account</a>
+    </div>
+  </header>
+
+  <main class="confirm-main">
+    
+    <!-- Left / Main Confirmation Content -->
+    <div class="confirm-details-card">
+      <div class="success-badge">✔ Payment Successful</div>
+      <h1>Thank you, your order is confirmed.</h1>
+      <p class="email-notice">We've sent a receipt and order details to <strong id="confirm_email">alex.jones@gmail.com</strong>.</p>
+
+      <!-- Meta Grid -->
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span>Order Number</span>
+          <strong>#KN-20948</strong>
+        </div>
+        <div class="meta-item">
+          <span>Estimated Delivery</span>
+          <strong>Thursday, Oct 24</strong>
+        </div>
+        <div class="meta-item">
+          <span>Shipping Method</span>
+          <strong>Expedited (2-3 Business Days)</strong>
+        </div>
+      </div>
+
+      <!-- Address & Payment Info Grid -->
+      <div class="info-split-grid">
+        <div class="info-box">
+          <h3>Shipping Address</h3>
+          <p>Alex Jones</p>
+          <p>123 Main Street</p>
+          <p>United States</p>
+        </div>
+        <div class="info-box">
+          <h3>Payment Details</h3>
+          <p>💳 Visa ending in 4242</p>
+          <p>Billing: $142.00 USD</p>
+          <span class="paid-tag">✔ Paid & Authorized</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="track-btn">Track Order Progress</button>
+        <a href="products.html" class="continue-btn">Continue Shopping</a>
+      </div>
+    </div>
+
+    <!-- Right Column: Order Summary Card -->
+    <aside class="confirm-summary">
+      <h2>Order Summary</h2>
+      
+      <div id="confirm_items_list" class="summary-items-list">
+        <!-- Populated dynamically via JS from localStorage or order data -->
+      </div>
+
+      <div class="summary-totals">
+        <div class="row">
+          <span>Subtotal</span>
+          <span id="confirm_subtotal">$140.00</span>
+        </div>
+        <div class="row">
+          <span>Shipping</span>
+          <span class="free">Free</span>
+        </div>
+        <div class="row">
+          <span>Estimated Tax</span>
+          <span>$2.00</span>
+        </div>
+        <hr>
+        <div class="row total-due">
+          <span>Total Paid</span>
+          <strong id="confirm_total">$142.00</strong>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="order.js"></script>
+</body>
+</html>
